@@ -6,8 +6,9 @@ const {hash} = require("bcrypt");
 
 const userSchema = new Schema ({
     username:{type:String,required:true,unique:true},
-    email:{type:String,required:true,unique:true},
+    email:{type:String,required:true,unique:true, match: /@/},
     password:{type:String,required:true},
+    bio:{type: String},
     image: {type: String},
     products:[{type:Schema.Types.ObjectId,ref:'Product'}],
     hackathons:[{type:Schema.Types.ObjectId,ref:'Hackathon'}],
