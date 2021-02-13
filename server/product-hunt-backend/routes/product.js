@@ -82,4 +82,60 @@ function productData(product,author) {
     }
 }
 
+// creating comment
+
+router.post("/:slug/comments", auth.verifyToken, async (req,res,next)=> {
+    try {
+        console.log(req.user.userId)
+        let slug = req.params.slug;
+        req.body.comment.author = req.user.userId;
+        let createdComment = await Comment.create(req.body.comment);
+        let author = await User.findById(req.user.userId);
+        let product = await Product.findOneAndUpdate({slug},{$push : {comment : createdComment._id}},{new:true});
+        if(!product) res.json('product not found');
+        res.json({comment: commentDetail(createdComment,author)});
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+});
+// getting list of comment
+router.get("/:slug/comments", async (req,res,next)=> {
+    try {
+        let slug = req.params.slug;
+        let productComment = await Product.findOne({slug}).populate({path: 'comment', populate:{
+            path:'author', model:"User"
+        }});
+        console.log(productComment);
+        res.json({comment: productComment.comment.map((comments)=> commentDetail(comments,comments.author))});
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+});
+// deleting a comment
+router.delete("/:slug/comments/:id",auth.verifyToken, async(req,res,next)=> {
+    try {
+        let id = req.params.id;
+        let slug = req.params.slug;
+        let removedCommentId = await Product.findOneAndUpdate({slug},{$pull : {comment: id }});
+        let deletedComment = await Comment.findByIdAndDelete(id);
+        res.json("comment deleted");
+    } catch (error) {
+        next(error);
+    }
+})
+
+function commentDetail(comment,author) {
+    return {
+        body: comment.body,
+        author: {
+            username: author.username,
+            bio: author.bio,
+            image: author.image,
+            following : author.following
+        }
+    }
+}
+
 module.exports = router;
