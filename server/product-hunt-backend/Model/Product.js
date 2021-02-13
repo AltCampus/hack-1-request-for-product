@@ -13,6 +13,7 @@ const productSchema = new Schema ({
     comments:[{type:Schema.Types.ObjectId,ref:'Comment'}],
     images:[{type:String}],
     tagList:[{type:String}],
+    comment: [{type:Schema.Types.ObjectId, ref:"Comment"}],
     acceptedUsers:[{type:Schema.Types.ObjectId,ref:'User'}]
 },{timestamps:true})
 
