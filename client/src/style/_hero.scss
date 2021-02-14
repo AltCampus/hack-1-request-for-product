@@ -1,0 +1,27 @@
+.profile-box {
+    padding: .75rem 1rem;
+}
+.profile-outer {
+    border-radius: 4px;
+}
+.box-shadow {
+    box-shadow: 2px 2px 2.5px 2.5px rgba(175, 173, 173, 0.3);
+    border-radius: 4px;
+} 
+.bell-icon {
+    border-radius: 4px;
+}
+.shadow-xl {
+    border-radius: 4px;
+    input {
+        border-radius: 4px 0 0 4px;
+    }
+}
+.filters {
+    box-shadow: 2px 2px 3px 3px rgba(175, 173, 173, 0.3);
+}
+.feed-part {
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
