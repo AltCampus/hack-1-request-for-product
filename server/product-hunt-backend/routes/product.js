@@ -5,13 +5,39 @@ const slugify = require("slugify");
 const auth = require("../modules/config");
 const User = require("../Model/User");
 const Comment = require("../Model/Comment");
+const multer = require('multer')
+const cloudinaryUpload = require('../modules/cloudinary.config')
+
+//multer config
+
+var storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, './public/images/upload');
+     },
+    filename: function (req, file, cb) {
+        cb(null , file.originalname);
+    }
+});
+var upload = multer({ storage : storage })
+
+
+
+
 
 //creating product
-router.post("/",auth.verifyToken, async (req,res,next)=> {
+router.post("/",auth.verifyToken,upload.single('ideathon'), async (req,res,next)=> {
     try {
         req.body.product.slug = slugify(`${req.body.product.title}`);
         req.body.product.author = req.user.userId;
-        let authorDetail = await User.findById(req.user.userId);
+         let authorDetail = await User.findById(req.user.userId);
+
+        // cloudinary sending application
+        req.body.ideathon = req.body.filename
+
+       await cloudinaryUpload(req,res)
+       console.log(res.image)
+
+       req.body.product.images = res.image.secure_url
         let createdProduct = await Product.create(req.body.product);
         res.json({products: productData(createdProduct,authorDetail)});
     } catch (error) {
