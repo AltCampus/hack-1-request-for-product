@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Header from "./Header";
 import Hero from "./Hero";
 import Feed from "./Feed";
@@ -14,7 +14,7 @@ class Home extends React.Component {
       <>
         <section className="grid w-full mx-auto container grid-cols-2  font-Cantata">
           <Header />
-          <main className="  col-span-2 flex flex-col  w-full    bg-gray-100 ">
+          <main className="  col-span-2 flex flex-col  w-full    bg-white ">
             <Hero />
             <Feed />
           </main>
