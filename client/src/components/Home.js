@@ -1,8 +1,9 @@
-import React from "react";
-import { BrowserRouter, Route, Link, NavLink } from "react-router-dom";
-import Header from "./Header";
-import Hero from "./Hero";
-import Feed from "./Feed";
+import React from 'react'
+import {Link,NavLink} from 'react-router-dom'
+import Header from './Header'
+import Hero from './Hero'
+import Feed from './Feed'
+
 
 class Home extends React.Component {
   constructor(props) {
