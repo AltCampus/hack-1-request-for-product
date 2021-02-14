@@ -43,34 +43,5 @@ class Hero extends React.Component{
 
 
 
-// <section className='w-full py-1 px-20 container mx-auto shadow flex flex-col     h-28'>
-// <div className='flex flex-row justify-between'>
-//   <div>
-//           <h1 className='text-2xl mx-10  text-shadow-lg font-bold '>Product-Hunt</h1>
-//   </div>
-//   <div className='flex flex-row items-center shadow  border-gray-200 py-1 px-2 justify-between'>
-//       <div className=' px-2 mx-2 border py-1 border-gray-400 shadow-md '>
-//           <i className="far text-md text-blue-500 text-shadow-md fa-bell"></i>
-//       </div>
-//       <Link>
-//               <div className='flex mx-2  items-end  flex-row'>
-//                   <i className="far text-2xl mx-2 fa-user"></i>
-//                   <h2 className='text-xl font-bold text-shadow-md'>Gangadhar</h2>
-//               </div>
-//       </Link>
-//   </div>
-// </div>
-// <div>
-// <div className='flex flex-col  justify-between mx-10 '>
-//     <div className='flex flex-row -my-5 items-end'>
-//           <div className=' flex px-4 flex-row relative top-10 items-center '>
-//               <h2 className='text-xl font-bold text-blue-500 underline'>All Products</h2>
-//               <h3 className='text-xl font-bold mx-5'>Feed</h3>
-//           </div>
-//     </div>
-//  </div>
-// </div>
-
-// </section>
 
 export default Hero
