@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter,Route,Link,NavLink} from 'react-router-dom'
+import {Link,NavLink} from 'react-router-dom'
 import Header from './Header'
 import Hero from './Hero'
 import Feed from './Feed'
