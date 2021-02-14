@@ -16,12 +16,10 @@ module.exports = {
         },
       },
     },
-    fontFamily: { Balsamiq: ["Balsamiq Sans", "cursive"] },
+    fontFamily: { Cantata: ["Cantata One", "serif"] },
   },
   variants: {
     extend: {},
   },
-  plugins: [
-    require('tailwindcss-textshadow')
-  ],
+  plugins: [require("tailwindcss-textshadow")],
 };
