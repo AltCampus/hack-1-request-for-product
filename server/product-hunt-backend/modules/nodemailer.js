@@ -17,9 +17,9 @@ function sendVerificationMail (user) {
     });
 
     var mailOptions = {
-        from: 'admin@lifeline.com', //replace with your email
+        from: 'admin@product.com', //replace with your email
         to: `${user.email}`, //replace with your email
-        subject: `Life-Line Verification Mail`,
+        subject: `Ideathon Verification Mail`,
         html: ` <!doctype html>
         <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
           <head>
@@ -131,7 +131,7 @@ function sendVerificationMail (user) {
                             <tr>
                               <td align='center' style='font-size:0px;padding:10px 25px;word-break:break-word;'>
                                 <div style='color:#ffffff;font-family:Open Sans, Arial, sans-serif;font-size:16px;font-weight:bold;line-height:19px;text-align:center;'>
-                                 Hello ${user.fullName}
+                                 Hello ${user.username}
                                 </div>
                               </td>
                             </tr>
@@ -166,9 +166,9 @@ function sendVerificationMail (user) {
                                 <div style='color:#ffffff;font-family:Open Sans, Arial, sans-serif;font-size:16px;font-style:italic;line-height:24px;text-align:center;'>
                                   Hello
                                   <br />
-                                  Welcome to LIFE LINE
+                                  Welcome to Ideathon
                                   <br />
-                                  Verify your mail now and become a life saviour
+                                  Verify your mail now and start posting about your great ideas,and request product ideas.
                                 </div>
                               </td>
                             </tr>
