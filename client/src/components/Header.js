@@ -15,16 +15,16 @@ class Header extends React.Component {
         <nav className="h-full my-10">
           <ul className="flex  flex-col   h-80 justify-between  items-center text-white">
             <li >
-              <i className="far hover:bg-transparent hover:bg-opacity-40 hover:bg-gray-100 hover:px-2 hover:text-white py-2 px-5  rounded-full text-gray-200 fa-user text-3xl"></i>
+              <i className="far hover:bg-transparent hover:bg-opacity-40 hover:bg-gray-100 hover:px-2 hover:text-white py-2 px-5  rounded-full text-gray-200 fa-user text-2xl"></i>
             </li>
             <li>
-              <i className="fas hover:bg-transparent hover:bg-opacity-40 hover:bg-gray-100 hover:px-2 hover:text-white py-2 px-5  rounded-full text-gray-200 fa-columns text-3xl"></i>
+              <i className="fas hover:bg-transparent hover:bg-opacity-40 hover:bg-gray-100 hover:px-2 hover:text-white py-2 px-5  rounded-full text-gray-200 fa-columns text-2xl"></i>
             </li>
             <li>
-              <i className="fal hover:bg-transparent hover:bg-opacity-40 hover:bg-gray-100 hover:px-2 hover:text-white py-2 px-5  rounded-full text-gray-200 fa-calendar-week text-3xl"></i>
+              <i className="fal hover:bg-transparent hover:bg-opacity-40 hover:bg-gray-100 hover:px-2 hover:text-white py-2 px-5  rounded-full text-gray-200 fa-calendar-week text-2xl"></i>
             </li>
             <li>
-              <i className="fab hover:bg-transparent hover:bg-opacity-40 hover:bg-gray-100 hover:px-2 hover:text-white py-2 px-5  rounded-full text-gray-200 fa-product-hunt text-3xl"></i>
+              <i className="fab hover:bg-transparent hover:bg-opacity-40 hover:bg-gray-100 hover:px-2 hover:text-white py-2 px-5  rounded-full text-gray-200 fa-product-hunt text-2xl"></i>
             </li>
           </ul>
         </nav>
