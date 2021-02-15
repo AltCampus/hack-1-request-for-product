@@ -8,7 +8,7 @@ router.get("/:username" ,async (req,res,next)=> {
         let username = req.params.username;
         let profile = await User.findOne({username});
         console.log(profile, req.user);
-        res.json({profiles : userProfiles(profile, req.user.userId)});
+        res.json({profile : userProfiles(profile, req.user.userId)});
     } catch (error) {
         console.log(error)
         next(error);
