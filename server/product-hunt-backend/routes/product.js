@@ -9,7 +9,7 @@ const Comment = require("../Model/Comment");
 //creating product
 router.post("/",auth.verifyToken, async (req,res,next)=> {
     try {
-        req.body.product.slug = slugify(`${req.body.product.title}`);
+        req.body.product.slug = slugify(`${req.body.product.title}`).toLowerCase();
         req.body.product.author = req.user.userId;
         let authorDetail = await User.findById(req.user.userId);
         let createdProduct = await Product.create(req.body.product);
@@ -35,7 +35,7 @@ router.get("/:slug",async (req,res,next)=> {
 router.put("/:slug",auth.verifyToken,async (req,res,next)=> {
     try {
         let slug = req.params.slug;
-        req.body.product.slug = slugify(`${req.body.product.title}`);
+        req.body.product.slug = slugify(`${req.body.product.title}`).toLowerCase();
         let updatedProduct = await Product.findOneAndUpdate({slug},req.body.product,{new:true}).populate('author');
         res.json({products: productData(updatedProduct,updatedProduct.author)});
     } catch (error) {
